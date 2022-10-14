@@ -1,0 +1,21 @@
+﻿@model MVC_OkulProjesi.Models.EntityFramework.TBLKULUPLER
+
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kulüp Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("Guncelle", "Kulup", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.KULUPAD)
+        @Html.TextBoxFor(m => m.KULUPAD,new {@class="form-control" })
+    </div>
+    @Html.HiddenFor(m => m.KULUPID)
+    <div style="margin-top:10px">
+        <button class="btn btn-info btn btn-sm">Güncelle</button>
+    </div>
+}
+
